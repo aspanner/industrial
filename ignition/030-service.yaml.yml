@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: example
+  name: ignition-service
   namespace: industrial-ignition-demo
 spec:
   ipFamilies:
@@ -12,7 +12,6 @@ spec:
       targetPort: 8088
   internalTrafficPolicy: Cluster
   clusterIPs:
-    - 172.31.230.87
   type: ClusterIP
   ipFamilyPolicy: SingleStack
   sessionAffinity: None

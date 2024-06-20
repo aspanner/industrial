@@ -1,0 +1,13 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: ignition-service
+  namespace: industrial-ignition-demo
+spec:
+  to:
+    kind: Service
+    name: ignition-service
+    weight: 100
+  port:
+    targetPort: 8088
+  wildcardPolicy: None   

@@ -1,13 +1,13 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: igntion
+  name: ignition
   namespace: industrial-ignition-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: igntion
+      app: ignition
   template:
     metadata:
       creationTimestamp: null
