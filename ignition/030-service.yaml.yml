@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: example
+  namespace: industrial-ignition-demo
+spec:
+  ipFamilies:
+    - IPv4
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8088
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+    - 172.31.230.87
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: ignition
+

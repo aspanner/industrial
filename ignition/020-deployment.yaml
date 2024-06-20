@@ -1,0 +1,41 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: igntion
+  namespace: industrial-ignition-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: igntion
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ignition
+    spec:
+      containers:
+        - name: container
+          image: quay.io/aspanner/ignition
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+          env: []
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+      imagePullSecrets: []
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+  paused: false
