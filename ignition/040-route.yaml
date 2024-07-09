@@ -2,7 +2,7 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: ignition-route
-  namespace: industrial-ignition-demo
+  namespace: industrial-demo
 spec:
   to:
     kind: Service
