@@ -1,0 +1,16 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: dgw
+  namespace: dgw
+  labels:
+    app: dgw
+spec:
+  # host: auto determined - no need to provide host name
+  to:
+    kind: Service
+    name: dgw
+    weight: 100
+  port:
+    targetPort: 80-tcp
+  wildcardPolicy: None
