@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: ignition
-  namespace: industrial-ignition-demo
+  namespace: industrial-demo
 spec:
   replicas: 1
   selector:
