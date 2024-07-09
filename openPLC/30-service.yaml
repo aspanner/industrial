@@ -1,0 +1,25 @@
+kind: Service
+apiVersion: v1
+metadata:
+  annotations:
+    skupper.io/address: plc-proxy
+    skupper.io/port: '8080'
+    skupper.io/proxy: tcp
+  name: plc
+  namespace: dgw
+  labels:
+    app: plc
+spec:
+  clusterIP: 10.0.55.12
+  type: NodePort
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: 502-tcp
+      protocol: TCP
+      port: 502
+      targetPort: 502
+  selector:
+    app: plc
