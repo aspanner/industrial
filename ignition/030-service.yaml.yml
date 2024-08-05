@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: ignition-service
-  namespace: industrial-ignition-demo
+  namespace: industrial-demo
 spec:
   ipFamilies:
     - IPv4
