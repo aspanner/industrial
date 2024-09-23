@@ -1,6 +1,8 @@
 In order to install and run the codesys PLC runtime execute below:
 
 ❯ mkdir -p ${HOME}/codesyscontrol/{conf,data}
+
+
 ❯ podman run --rm -it --privileged \
     -v ${HOME}/codesyscontrol/conf:/conf/codesyscontrol/ \
     -v ${HOME}/codesyscontrol/data/:/data/codesyscontrol/ \
